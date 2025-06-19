@@ -1,48 +1,48 @@
-# Avaliador de ExpressÃµes NumÃ©ricas em C
+# Numeric Expression Evaluator in C
 
-Este projeto implementa um avaliador de expressÃµes numÃ©ricas em linguagem C. Ele Ã© capaz de converter expressÃµes da notaÃ§Ã£o infixa para pÃ³s-fixa (NotaÃ§Ã£o Polonesa Reversa - RPN) e calcular o valor numÃ©rico dessas expressÃµes. O projeto faz uso extensivo da estrutura de dados Pilha para gerenciar operadores e operandos durante os processos de conversÃ£o e avaliaÃ§Ã£o.
+This project implements a numeric expression evaluator in C language. It is capable of converting expressions from infix to postfix notation (Reverse Polish Notation - RPN) and calculating the numerical value of these expressions. The project makes extensive use of the Stack data structure to manage operators and operands during the conversion and evaluation processes.
 
-## Funcionalidades
+## Features
 
-*   **ConversÃ£o Infixa para PÃ³s-fixa**: Transforma expressÃµes matemÃ¡ticas da forma usual (infixa) para a notaÃ§Ã£o pÃ³s-fixa.
-*   **ConversÃ£o PÃ³s-fixa para Infixa**: ReconstrÃ³i a expressÃ£o infixa a partir de sua forma pÃ³s-fixa, adicionando parÃªnteses quando necessÃ¡rio para manter a precedÃªncia correta.
-*   **AvaliaÃ§Ã£o de ExpressÃµes PÃ³s-fixas**: Calcula o valor numÃ©rico de expressÃµes em notaÃ§Ã£o pÃ³s-fixa.
-*   **AvaliaÃ§Ã£o de ExpressÃµes Infixas**: Calcula o valor numÃ©rico de expressÃµes em notaÃ§Ã£o infixa, utilizando a conversÃ£o interna para pÃ³s-fixa.
-*   **Suporte a Operadores BÃ¡sicos**: AdiÃ§Ã£o (`+`), SubtraÃ§Ã£o (`-`), MultiplicaÃ§Ã£o (`*`), DivisÃ£o (`/`), MÃ³dulo (`%`), PotenciaÃ§Ã£o (`^`).
-*   **Suporte a FunÃ§Ãµes MatemÃ¡ticas**: Raiz quadrada (`raiz`), Seno (`sen`), Cosseno (`cos`), Tangente (`tg`), Logaritmo na base 10 (`log`).
+*   **Infix to Postfix Conversion**: Transforms mathematical expressions from the usual form (infix) to postfix notation.
+*   **Postfix to Infix Conversion**: Reconstructs the infix expression from its postfix form, adding parentheses when necessary to maintain correct precedence.
+*   **Postfix Expression Evaluation**: Calculates the numerical value of expressions in postfix notation.
+*   **Infix Expression Evaluation**: Calculates the numerical value of expressions in infix notation, using internal conversion to postfix.
+*   **Support for Basic Operators**: Addition (`+`), Subtraction (`-`), Multiplication (`*`), Division (`/`), Modulo (`%`), Exponentiation (`^`).
+*   **Support for Mathematical Functions**: Square root (`raiz`), Sine (`sen`), Cosine (`cos`), Tangent (`tg`), Base-10 logarithm (`log`).
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto Ã© composto pelos seguintes arquivos:
+ The project consists of the following files:
 
-*   `expressao.h`: ContÃ©m as definiÃ§Ãµes da estrutura `Expressao` e os protÃ³tipos das funÃ§Ãµes de conversÃ£o e avaliaÃ§Ã£o.
-*   `expressao.c`: Implementa as funÃ§Ãµes declaradas em `expressao.h`, incluindo as lÃ³gicas para manipulaÃ§Ã£o de pilhas, conversÃ£o de notaÃ§Ã£o e avaliaÃ§Ã£o de expressÃµes.
-*   `main.c`: ContÃ©m a funÃ§Ã£o principal (`main`) que demonstra o uso das funcionalidades do avaliador atravÃ©s de uma sÃ©rie de testes com diferentes expressÃµes.
+*   `expressao.h`: Contains the definitions of the `Expressao` structure and the prototypes of the conversion and evaluation functions.
+*   `expressao.c`: Implements the functions declared in `expressao.h`, including the logic for stack manipulation, notation conversion, and expression evaluation.
+*   `main.c`: Contains the main function (`main`) that demonstrates the use of the evaluator's functionalities through a series of tests with different expressions.
 
-## Como Compilar
+## How to Compile
 
-Para compilar o projeto, vocÃª precisarÃ¡ de um compilador C (como o GCC). Navegue atÃ© o diretÃ³rio raiz do projeto no seu terminal e execute o seguinte comando:
-
-```bash
-gcc main.c expressao.c -o avaliador -lm
-```
-
-*   `gcc`: O compilador C.
-*   `main.c expressao.c`: Os arquivos fonte a serem compilados.
-*   `-o avaliador`: Define o nome do executÃ¡vel de saÃ­da como `avaliador`.
-*   `-lm`: Linka a biblioteca matemÃ¡tica (necessÃ¡ria para funÃ§Ãµes como `sqrt`, `sin`, `cos`, `tan`, `log10`, `pow`, `fmod`).
-
-## Como Executar
-
-ApÃ³s a compilaÃ§Ã£o bem-sucedida, vocÃª pode executar o programa a partir do terminal:
+To compile the project, you will need a C compiler (such as GCC). Navigate to the project's root directory in your terminal and execute the following command:
 
 ```bash
-./avaliador
+gcc main.c expressao.c -o evaluator -lm
 ```
 
-O programa irÃ¡ exibir os resultados dos testes prÃ©-definidos no arquivo `main.c`, mostrando as expressÃµes infixas, suas conversÃµes para pÃ³s-fixa, a reconstruÃ§Ã£o para infixa e os valores calculados.
+*   `gcc`: The C compiler.
+*   `main.c expressao.c`: The source files to be compiled.
+*   `-o evaluator`: Defines the output executable name as `evaluator`.
+*   `-lm`: Links the math library (necessary for functions like `sqrt`, `sin`, `cos`, `tan`, `log10`, `pow`, `fmod`).
 
-## Exemplo de Uso (do `main.c`)
+## How to Run
+
+After successful compilation, you can run the program from the terminal:
+
+```bash
+./evaluator
+```
+
+The program will display the results of the predefined tests in the `main.c` file, showing the infix expressions, their conversions to postfix, the reconstruction to infix, and the calculated values.
+
+## Example Usage (from `main.c`)
 
 ```c
 #include <stdio.h>
@@ -52,30 +52,30 @@ O programa irÃ¡ exibir os resultados dos testes prÃ©-definidos no arquivo `m
 
 int main() {
     Expressao exp;
-    printf("=== Avaliador de Expressoes ===\n\n");
+    printf("=== Expression Evaluator ===\n\n");
 
-    // Teste 1
+    // Test 1
     strcpy(exp.inFixa, "(3 + 4) * 5");
     strcpy(exp.posFixa, getFormaPosFixa(exp.inFixa));
-    printf("Infixa: %s\n", exp.inFixa);
-    printf("Posfixa: %s\n", exp.posFixa);
-    printf("Infixa convertida: %s\n", getFormaInFixa(exp.posFixa));
-    printf("Valor na posfixa: %.5f\n", getValorPosFixa(exp.posFixa));
-    printf("Valor na infixa: %.5f\n", getValorInFixa(exp.inFixa));
+    printf("Infix: %s\n", exp.inFixa);
+    printf("Postfix: %s\n", exp.posFixa);
+    printf("Converted Infix: %s\n", getFormaInFixa(exp.posFixa));
+    printf("Value (postfix): %.5f\n", getValorPosFixa(exp.posFixa));
+    printf("Value (infix): %.5f\n", getValorInFixa(exp.inFixa));
     printf("------------------------------------------------------------\n");
 
-    // Outros testes...
+    // Other tests...
 
-    printf("=== Fim dos testes ===\n");
+    printf("=== End of tests ===\n");
     return 0;
 }
 ```
 
-## ContribuiÃ§Ã£o
+## Contribution
 
-ContribuiÃ§Ãµes sÃ£o bem-vindas! Sinta-se Ã  vontade para abrir issues ou enviar pull requests para melhorias, correÃ§Ãµes de bugs ou novas funcionalidades.
+Contributions are welcome! Feel free to open issues or submit pull requests for improvements, bug fixes, or new features.
 
-## LicenÃ§a
+## License
 
-Este projeto estÃ¡ licenciado sob a [LicenÃ§a MIT](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
